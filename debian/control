@@ -1,0 +1,39 @@
+Source: httpx2
+Section: python
+Priority: optional
+Maintainer: Vítězslav Dvořák <info@vitexsoftware.cz>
+Build-Depends: debhelper (>= 13),
+               debhelper-compat (= 13),
+               pybuild-plugin-pyproject,
+               python3-all,
+               python3-anyio,
+               python3-hatch-fancy-pypi-readme,
+               python3-hatchling,
+               python3-httpcore2 (>= 2.9.1),
+               python3-idna,
+               python3-truststore,
+Standards-Version: 4.6.2.0
+Homepage: https://github.com/pydantic/httpx2
+Vcs-Git: https://github.com/Vitexus/httpx2.git
+Vcs-Browser: https://github.com/Vitexus/httpx2
+Rules-Requires-Root: no
+
+Package: python3-httpx2
+Architecture: all
+Depends: python3-anyio (>= 4.9),
+         python3-httpcore2 (>= 2.9.1),
+         python3-idna (>= 3.18),
+         python3-truststore (>= 0.10),
+         ${misc:Depends},
+         ${python3:Depends},
+Recommends: ${python3:Recommends},
+Suggests: ${python3:Suggests},
+Description: next generation HTTP client (v2 line, installs as httpx2)
+ httpx2 is Pydantic's actively-developed next-generation rewrite of
+ httpx (the "v2" line of the httpx/httpcore ecosystem, built on top of
+ httpcore2). It installs its own top-level "httpx2" Python module, side
+ by side with the unrelated, still separately maintained python3-httpx
+ ("v1" httpx) package.
+ .
+ Packaged to satisfy mcp (>= 2.0.0b2)'s direct dependency on httpx2,
+ needed for the fastmcp 4.0.0a2 migration.

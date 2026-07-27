@@ -1,0 +1,22 @@
+httpx2 (2.9.1-1~vitex2) unstable; urgency=medium
+
+  * Relax python3-httpcore2 dep to >= 2.9.1 (was exact = 2.9.1, which
+    doesn't match the actual installed Debian revision string).
+
+ -- Vítězslav Dvořák <info@vitexsoftware.cz>  Mon, 27 Jul 2026 17:51:48 +0200
+
+httpx2 (2.9.1-1~vitex1) unstable; urgency=medium
+
+  * New source package: httpx2, Pydantic's actively-developed "v2"
+    rewrite of httpx (installs its own top-level httpx2 module, built
+    on httpcore2, separate from python3-httpx). Packaged to satisfy
+    mcp 2.0.0b2's direct dependency, needed for the mcprack fastmcp
+    4.0.0a2 migration.
+  * debian/control: rename source/binary package, depend on
+    python3-httpcore2 (= 2.9.1), python3-anyio (>= 4.9),
+    python3-idna (>= 3.18), python3-truststore (>= 0.10) to match this
+    release's actual requirements.
+  * Based on the packaging of python3-httpx 0.28.1-1 (Sandro Tosi,
+    Debian Python Team), adapted for the separate httpx2 source.
+
+ -- Vítězslav Dvořák <info@vitexsoftware.cz>  Mon, 27 Jul 2026 17:25:00 +0200

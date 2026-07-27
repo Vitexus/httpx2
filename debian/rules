@@ -1,0 +1,12 @@
+#! /usr/bin/make -f
+
+export PYBUILD_NAME=httpx2
+
+%:
+	dh $@ --with python3 --buildsystem=pybuild
+
+# The httpx2 2.9.1 sdist published to PyPI does not ship a tests/
+# directory at all -- there is nothing to run, not a maintainer choice
+# to skip.
+override_dh_auto_test:
+	@echo "No tests/ directory in the httpx2 2.9.1 sdist -- nothing to run"
