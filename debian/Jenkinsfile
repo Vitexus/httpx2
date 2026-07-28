@@ -2,15 +2,19 @@
 
 // Current version of this Pipeline https://github.com/VitexSoftware/BuildImages/blob/main/Test/Jenkinsfile
 
+// Restricted to debian:trixie only for the initial build: matches
+// httpcore2's own restriction (its dependency) - trixie is what's actually
+// needed for the mcprack fastmcp 4.0.0a2 / mcp 2.0 migration. Widen again
+// once the other distros' python3-httpcore2/python3-idna are sorted out.
 String[] distributions = [
-			'debian:bookworm',
+			// 'debian:bookworm', // Disabled: not needed right now, depends on python3-httpcore2 which isn't built there yet.
 			'debian:trixie',
 			// 'debian:forky', // Disabled: Forky is still unstable/research-only.
 			//                 // The full Debian package ecosystem is not yet available for Forky.
 			//                 // Re-enable once the stack builds cleanly for Forky.
-			'ubuntu:jammy',
-			'ubuntu:noble',
-			'ubuntu:resolute',
+			// 'ubuntu:jammy', // Disabled: not needed right now, depends on python3-httpcore2 which isn't built there yet.
+			// 'ubuntu:noble', // Disabled: not needed right now, depends on python3-httpcore2 which isn't built there yet.
+			// 'ubuntu:resolute', // Disabled: not needed right now, depends on python3-httpcore2 which isn't built there yet.
 ]
 
 String vendor = 'vitexsoftware'
