@@ -9,9 +9,7 @@
 String[] distributions = [
 			// 'debian:bookworm', // Disabled: not needed right now, depends on python3-httpcore2 which isn't built there yet.
 			'debian:trixie',
-			// 'debian:forky', // Disabled: Forky is still unstable/research-only.
-			//                 // The full Debian package ecosystem is not yet available for Forky.
-			//                 // Re-enable once the stack builds cleanly for Forky.
+			'debian:forky',
 			// 'ubuntu:jammy', // Disabled: not needed right now, depends on python3-httpcore2 which isn't built there yet.
 			// 'ubuntu:noble', // Disabled: not needed right now, depends on python3-httpcore2 which isn't built there yet.
 			// 'ubuntu:resolute', // Disabled: not needed right now, depends on python3-httpcore2 which isn't built there yet.
